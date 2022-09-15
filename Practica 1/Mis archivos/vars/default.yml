@@ -1,0 +1,7 @@
+---
+mysql_root_password: "12345"
+app_user: "svadmin"
+http_host: "www.jterrones.com"
+http_conf: "www.jterrones.com.conf"
+http_port: "80"
+disable_default: true

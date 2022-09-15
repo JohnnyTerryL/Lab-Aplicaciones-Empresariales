@@ -1,0 +1,11 @@
+---
+- hosts: all
+  become: true
+  
+  tasks:
+    - name: create a new database
+      mysql_db: name=validar state=present login_user=root login_password="12345"
+    - name: add sample data to database
+      copy: src=web/validar.sql dest=/tmp/validar.sql
+    - name: insert sample data into database
+      mysql_db: name=validar state=import target=/tmp/validar.sql login_password="12345"
